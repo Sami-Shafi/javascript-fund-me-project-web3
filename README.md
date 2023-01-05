@@ -1,6 +1,8 @@
 ## Final Project looks like this
 
-![alt text](http://url/to/img.png)
+![Final View of project](https://github.com/Sami-Shafi/javascript-fund-me-project-web3/blob/master/project-screenshot.png)
+
+Thanks to Freecodecamp.
 
 # html-fund-me-fcc
 
