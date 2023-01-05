@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Fund Me App</title>
-  </head>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fund Me App</title>
 
-  <body>
-    <button id="connectButton">Connect</button>
-    <button id="balanceButton">getBalance</button>
-    <button id="withdrawButton">Withdraw</button>
-    <!-- <form> -->
-    <label for="ethAmount">ETH Amount</label>
-    <input id="ethAmount" placeholder="0.1" type="number"/>
-    <button type="button" id="fundButton" > Fund </button>
-    <!-- </form> -->
-  </body>
+        <link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<h2>Welcome to Basic.io</h2>
+		<button class="connect-btn">Connect to Metamask</button>
+		<button class="fund-btn">Fund</button>
+		<button class="balance-btn">Get Balance</button>
+		<button class="withdraw-btn">Withdraw Funds</button>
 
-  <script src="./index.js" type="module"></script>
+		<br />
+		<br />
+		<label>ETH Amount</label>
+		<br />
+		<input type="number" class="eth-input" placeholder="put any value..." />
+
+		<script src="./app.js" type="module"></script>
+	</body>
 </html>
