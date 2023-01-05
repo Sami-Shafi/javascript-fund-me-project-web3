@@ -8,6 +8,12 @@ const fundBtn = document.querySelector(".fund-btn");
 const inputField = document.querySelector(".eth-input");
 const balanceBtn = document.querySelector(".balance-btn");
 const withdrawBtn = document.querySelector(".withdraw-btn");
+const balanceField = document.querySelector(".balance-field");
+const balanceBox = document.querySelector(".balance-box");
+
+// the balance box will not show initially
+balanceBox.style.opacity = 0;
+
 const { ethereum } = window;
 
 // events
@@ -38,7 +44,7 @@ const connectToMM = async () => {
 	try {
 		// make a connection
 		await ethereum.request({ method: "eth_requestAccounts" });
-		console.log("Connected!");
+		showAndHideBox("Connected!");
 	} catch (err) {
 		// if not connected for some reason
 		console.log(err);
@@ -63,7 +69,9 @@ const fund = async (ethAmount) => {
 
 		// wait for transaction to be mined
 		await listenForTxMining(transactionResponse, provider);
-		console.log("Done!");
+
+		// show the balance box and hide it after some time
+		showAndHideBox("Fund Received! Thank you.");
 	} catch (err) {
 		console.log(err);
 	}
@@ -83,11 +91,23 @@ const listenForTxMining = (transactionResponse, provider) => {
 	});
 };
 
+// function for showing and hiding the result box
+const showAndHideBox = (textFieldValue) => {
+	balanceField.innerText = textFieldValue;
+	balanceBox.style.opacity = 1;
+	setTimeout(() => {
+		balanceBox.style.opacity = 0;
+	}, 5000);
+};
+
 const getBalance = async () => {
 	const provider = new ethers.providers.Web3Provider(ethereum);
 	const balance = await provider.getBalance(contractAddress);
 
 	console.log(`Balance is: ${ethers.utils.formatEther(balance)}`);
+
+	// show the balance box and hide it after some time
+	showAndHideBox(`${ethers.utils.formatEther(balance)} ETH`);
 };
 
 const withdrawFund = async () => {
@@ -104,7 +124,8 @@ const withdrawFund = async () => {
 		const transactionResponse = await contract.withdraw();
 		listenForTxMining(transactionResponse, provider);
 
-		console.log("Done!");
+		// show the balance box and hide it after some time
+		showAndHideBox("Withdraw Done!");
 	} catch (err) {
 		console.log(err);
 	}

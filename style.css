@@ -1,0 +1,154 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+input {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+:focus {
+	outline: none;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.my-2 {
+	margin: 32px auto;
+}
+
+h2 {
+	margin-top: 32px;
+}
+
+.center {
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-primary {
+	padding: 15px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	background-size: 300% 100%;
+	border-radius: 50px;
+	transition: all 0.4s ease-in-out;
+	background-image: linear-gradient(
+		to right,
+		#e17800,
+		#f58607,
+		#f58607,
+		#e17800
+	);
+	box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+}
+
+.btn-secondary {
+	padding: 15px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 50px;
+	border: 2px solid #e17800;
+	background-color: transparent;
+	color: #e17800;
+	box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+	transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+	background-color: #e17800;
+	transition: all 0.2s ease-in-out;
+	color: #fff;
+}
+
+.btn-primary:hover {
+	background-position: 100% 0;
+	transition: all 0.4s ease-in-out;
+}
+
+.col-3 {
+	width: 40%;
+	position: relative;
+}
+
+@media only screen and (min-width: 720px) {
+	.col-3 {
+		/* float: left; */
+		width: 27.33%;
+	}
+}
+
+input[type="number"],
+input[type="text"] {
+	font: 15px/24px Arial, Halvetica, sans-serif;
+	color: #333;
+	width: 100%;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+	border-radius: 50px 0 0 50px;
+}
+
+.effect-11 {
+	border: 0;
+	padding: 7px 15px;
+	border: 1px solid #ccc;
+	position: relative;
+	background: transparent;
+}
+
+.effect-11 ~ .focus-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background-color: #f5860220;
+	transition: 0.3s;
+	z-index: -1;
+	border-radius: 50px 0 0 50px;
+}
+.effect-11:focus ~ .focus-bg {
+	transition: 0.3s;
+	width: 100%;
+}
+
+.btn-primary.input-btn {
+	margin: 0;
+	border-radius: 0 50px 50px 0;
+	padding: 11px 20px;
+}
+.balance-box {
+	margin-top: 32px;
+	background-color: #e1780070;
+	width: 20%;
+	min-width: 250px;
+	border-radius: 50px;
+	height: 50px;
+	transition: 0.1s all ease-in;
+}
+.balance-box h2 {
+	display: inline-block;
+	color: #000000;
+	font-size: 16px;
+	margin-top: 0;
+}

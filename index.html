@@ -6,20 +6,68 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Fund Me App</title>
 
-        <link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<h2>Welcome to Basic.io</h2>
-		<button class="connect-btn">Connect to Metamask</button>
-		<button class="fund-btn">Fund</button>
-		<button class="balance-btn">Get Balance</button>
-		<button class="withdraw-btn">Withdraw Funds</button>
+		<div class="col center">
+			<h2>Welcome to Basic.io</h2>
+			<svg
+				title="SVG Heart Icon"
+				viewBox="-11 -11 122 111"
+				width="150"
+				height="150"
+				class="my-2"
+			>
+				<path
+					d="
+                       M 50 0,
+                       A 1 1 0 1 0 0 50, 
+                       L50,100, 
+                       L100,50,
+                       A 1 1 0 1 0 50 0"
+					fill="#f58607"
+				/>
+			</svg>
+		</div>
 
-		<br />
-		<br />
-		<label>ETH Amount</label>
-		<br />
-		<input type="number" class="eth-input" placeholder="put any value..." />
+		<div class="content">
+			<div class="row center">
+				<button class="connect-btn btn-primary">
+					Connect to Metamask
+				</button>
+			</div>
+			<div class="row center my-2">
+				<div class="col-3">
+					<input
+						class="effect-11 eth-input"
+						type="number"
+						placeholder="Put any ETH value..."
+					/>
+					<span class="focus-bg"></span>
+				</div>
+				<button class="fund-btn btn-primary input-btn">
+					Send Fund
+				</button>
+			</div>
+
+			<div class="row center">
+				<button
+					class="balance-btn btn-secondary"
+					style="margin-right: 20px"
+				>
+					Check Balance
+				</button>
+				<button class="withdraw-btn btn-secondary">
+					Withdraw Funds
+				</button>
+			</div>
+
+			<div class="row center">
+				<span class="balance-box row center">
+					<h2 class="balance-field">Balance will show here</h2>
+				</span>
+			</div>
+		</div>
 
 		<script src="./app.js" type="module"></script>
 	</body>
